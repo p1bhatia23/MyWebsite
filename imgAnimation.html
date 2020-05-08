@@ -1,0 +1,51 @@
+<html>
+<head>
+<script language="JavaScript">
+var srcList = ["images/imgAnim/img0.jpg", 
+               "images/imgAnim/img1.jpg", 
+               "images/imgAnim/img2.jpg", 
+               "images/imgAnim/img3.jpg"];		   
+var index = 0;
+var loopCount = 0;
+    
+var time;
+
+
+function begin()
+{
+    index = index +1;
+
+    if( index > 3) 
+    {
+        
+        index = 0;
+        loopCount = loopcount +1;
+    }
+    document.getElementById("myPic").src = srcList[index];
+    
+    if(loopCount < 2)
+    {
+    time = setTimeout("begin()", 100);
+    }
+    else
+    {
+        time = clearTimeout();
+        loopCount = 0;
+    }
+}
+
+    
+</script>
+</head>
+<body>
+<center>
+<h1>Animation</h1>
+<img id="myPic" src="images/imgAnim/img0.jpg" width="600"/>
+
+<br/><br/>
+<input type="button" value="Start!" onclick="begin()">
+
+</center>
+</body>
+</html>
+
